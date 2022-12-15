@@ -1,0 +1,42 @@
+<%include persists/header%>
+    <section>
+        <div class="container height-100vh  flex justify-center align-center">
+            <div class="width-40 width-100mq height70mq">
+                <form action="/users/signup" enctype="multipart/form-data" method="post">
+                    <h1 class="text-center font-size-2 font-weight600">Sign up</h1>
+                    <label for="">Name </label>
+                    <input type="text" name="name" id="" placeholder="name" required  >
+                    <label for="">email </label>
+                    <input type="email" name="email" id="" placeholder="email" required>
+                    <label for="">password </label>
+                    <div class="boder-black boder-redius-5px">
+                        <input type="password" name="password" id="password-input" placeholder="password" required>
+                        <span class="material-symbols-outlined visivilty">
+                            visibility_off
+                        </span>
+                    </div>
+                    <label for="">Mobile </label>
+                    <input type="number" name="mobile" id="" placeholder="mobile" required>
+                    <label for="">City </label>
+                    <input type="text" name="city" id="" placeholder="city" required>
+                    <label for="">Image </label>
+                    <input class="boder-black" type="file" name="image" id="" placeholder="image" required>
+                    <label for="">Admin</label>
+                    <div class="boder-black  boder-redius-5px flex justify-around">
+                        <div>
+                            <input type="radio" id="false" name="admin" value="false" />
+                            <label for="false">False</label><br />
+                        </div>
+                        <div>
+                            <input type="radio" id="true" name="admin" value="true" />
+                            <label for="true">True</label><br />
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <%include persists/footer%>

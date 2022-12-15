@@ -1,0 +1,96 @@
+<%include persists/header%>
+
+
+
+
+  <section>
+    <div class="container  flex  flex-wrap-yes gap">
+      <!-- category  fillter  -->
+      <div class="width-10 category-div position-relative  height-10rem margin-top-2">
+        <form class="width-100 margin-auto category-form width-90mq" action="/" method="GET">
+          <span class="margit-b-1">Select Category</span>
+          <select class=" margit-b-1 width-100mq" name="category">
+            <option value="">all product</option>
+            <%uniqueCategory.forEach((category)=>{%>
+              <option class="" value="<%=category%>">
+                <%=category%>
+              </option>
+              <%})%>
+          </select>
+          <button class="btn btn-sucess" type="submit">Submit</button>
+        </form>
+      </div>
+      <!-- product -->
+      <div class="flex width-90 width-100mq ">
+        <!--all product -->
+        <div class="flex  align-self-start flex-wrap-yes width-100 gap">
+          <%product.reverse().forEach((item)=>{%>
+            <div class="card width-100mq  z-index-99mq">
+              <div class="card-img">
+                <a class="like-icon" href="#"><i class="fa-regular fa-heart"></i></a>
+                <img src="/images/<%=item.image%>" alt="">
+              </div>
+              <div class="card-info">
+                <p class="text-title text-captilize">
+                  <%=item.name%>
+                </p>
+                <p class="text-body">
+                  <%=item.description.slice(0,25)%>
+                </p>
+              </div>
+              <div class="card-footer">
+                <span class="text-title">$<%=item.price%></span>
+                <div class="card-button">
+                  <a href="/users/<%=item._id%>/cart"><i class="fa-solid fa-cart-plus"></i></a>
+                </div>
+              </div>
+              <div>
+                <span>Available:<%=item.quantity%></span>
+              </div>
+            </div>
+            <%})%>
+        </div>
+        <!-- cart div -->
+        <div class="width-20 cart-div pading-1 bg-color-green width-100mq ">
+          <div class="flex justify-between">
+            <div>
+              <h1 class="color-white font-size-1-2 margit-b-p5"> Total product:<%=cart.length%>
+              </h1>
+              <% var total=0%>
+                <%cart.forEach((cart)=>{%>
+                  <%total+=cart.productId.price%>
+                    <%})%>
+                      <h1 class="color-white font-size-1-2">
+                        Total price: <%=total%>
+                      </h1>
+
+            </div>
+            <div>
+              <a class="color-pink font-size-1-5 xmark" href="#"><i class="fa-solid fa-xmark"></i></a>
+            </div>
+          </div>
+          <%cart.forEach((cartItem)=>{%>
+            <div class="width-100 height-10rem margit-b-p5 boder-pink">
+              <figure class="height-50  bg-color-white">
+                <img src="/images/<%=cartItem.productId.image%>" alt="image">
+              </figure>
+              <h1 class="color-white text-center">
+                <%=cartItem.productId.name%>
+              </h1>
+              <h2 class="color-white text-center">
+                <%=cartItem.productId.description.slice(0,15)%>
+              </h2>
+
+              <h3 class="color-white font-size-1-2">price:<%=cartItem.productId.price%>
+              </h3>
+              <div class="text-center">
+                <a href="/users/<%=cartItem._id%>/delete"><button class="btn btn-delete ">Remove</button></a>
+              </div>
+            </div>
+            <%})%>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <%include persists/footer%>

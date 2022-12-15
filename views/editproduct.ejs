@@ -1,0 +1,35 @@
+<%include persists/header%>
+    <section>
+        <div class="container height-100vh flex justify-center align-center flex-colum-mq margin-top8rem-mq">
+            <!-- 1 -->
+            <div class="width-40 width-100mq">
+                <img src="/images/men4.jpg" alt="img">
+            </div>
+            <!-- 2 -->
+            <div class="width-40 width-100mq">
+                <form action="/admin/<%=product._id%>/edit" enctype="multipart/form-data" method="post">
+                    <h1 class="text-center font-size-2 font-weight600">Edit product</h1>
+                    <label for="">Name </label>
+                    <input type="text" name="name" id="" value="<%=product.name%>" placeholder=" product name">
+                    <label for="">Description </label>
+                    <input type="text" name="description" value="<%=product.description%>" placeholder=" description">
+                    <label for="">Price</label>
+                    <input type="number" name="price" value="<%=product.price%>" placeholder="Price">
+                    <label for="">quantity</label>
+                    <input type="number" name="quantity" value="<%=product.quantity%>" placeholder="quantity">
+                    <label for="">category</label>
+                    <input type="text" name="category" value="<%=product.category%>" placeholder="category">
+                    <label for="">Image </label>
+                    <!-- <div class="boder-black boder-redius-5px"> -->
+                    <input class="boder-black boder-redius-5px" type="file" name="image" value="<%=product.image%>"
+                        placeholder="image">
+                    <!-- </div> -->
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+
+    <%include persists/footer%>

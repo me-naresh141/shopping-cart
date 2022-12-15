@@ -1,0 +1,356 @@
+/* Global Styles */
+
+/* General */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1.125rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Container */
+.container {
+  width: 100vw;
+  max-width: 90%;
+  margin: 0 auto;
+  /* border: 2px solid; */
+}
+
+/* Anchor Decoration */
+a {
+  text-decoration: none;
+}
+
+/* Image Adjust */
+.full-width {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Positions */
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+.position-sticky {
+  position: sticky;
+}
+
+
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0.35rem 1rem;
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+  margin: 0.3rem 0;
+}
+.submit-btn {
+  border: 2px solid green;
+  width: 20%;
+  margin: 0.5rem auto;
+  padding: 0.3rem;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-sucess {
+  color: white;
+  border: 1px solid green;
+  background-color: green;
+}
+
+.btn-delete {
+  color: white;
+  background-color: red;
+  border: 1px solid red;
+}
+/* Flex */
+.flex {
+  display: flex;
+}
+
+/* Justify Content */
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* Align Items */
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.align-baseline {
+  align-items: baseline;
+}
+
+/* Align Content */
+.align-content-start {
+  align-content: flex-start;
+}
+
+.align-content-end {
+  align-content: flex-end;
+}
+
+.align-content-center {
+  align-content: center;
+}
+
+.align-content-stretch {
+  align-content: stretch;
+}
+
+.align-content-around {
+  align-content: space-around;
+}
+
+.align-content-between {
+  align-content: space-between;
+}
+.align-self {
+  align-self: flex-end;
+}
+
+/* Flex Wrap */
+.flex-wrap-yes {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-no {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/* Flex Direction */
+.flex-direction-column {
+  flex-direction: column;
+}
+
+
+
+.flex-direction-row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Align Self */
+.align-self-start {
+  align-self: flex-start;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.align-self-auto {
+  align-self: auto;
+}
+
+
+
+
+/* background-color */
+
+.bg-color-light-white {
+  background-color: rgb(236, 238, 240);
+}
+.bg-color-green {
+  background-color: rgb(15, 61, 62);
+}
+.bg-color-white {
+  background-color: white;
+}
+
+.color-white {
+  color: white;
+}
+.color-pink {
+  color: pink;
+}
+.color-red {
+  color: red;
+}
+/*  */
+.width-10 {
+  width: 10%;
+}
+.width-20 {
+  width: 20%;
+}
+.width-40 {
+  width: 40%;
+}
+.min-width-20 {
+  min-width: 20%;
+}
+.width-50 {
+  width: 50%;
+}
+.width-90 {
+  width: 85%;
+}
+.width-100 {
+  width: 100%;
+}
+.height-10rem {
+  height: 14rem;
+}
+.height-20rem {
+  height: 20rem;
+}
+.height-25rem {
+  height: 25rem;
+}
+.height-13 {
+  height: 13%;
+}
+.height-20 {
+  height: 20%;
+}
+.height-40 {
+  height: 40%;
+}
+.height-50 {
+  height: 50%;
+}
+.height-90 {
+  height: 90%;
+}
+.height-100vh {
+  height: 100vh;
+}
+
+/* margin pading */
+.pading-tb-1 {
+  padding: 1rem 0;
+}
+.pading-2 {
+  padding: 2rem;
+}
+.pading-1 {
+  padding: 1rem;
+}
+.marginlr-p5 {
+  margin: 0 0.5rem;
+}
+.margin-auto {
+  margin: 0 auto;
+}
+.margit-b-p5 {
+  margin-bottom: 0.5rem;
+}
+.margit-b-1 {
+  margin: 1rem auto;
+}
+.margin-b-2 {
+  margin-bottom: 2rem;
+}
+.margin-top-2 {
+  margin-top: 2rem;
+}
+/*  */
+.font-size-1-5 {
+  font-size: 1.5rem;
+}
+.font-size-1-2 {
+  font-size: 1.2;
+}
+.font-size-2 {
+  font-size: 2rem;
+}
+.font-weight600 {
+  font-weight: 600;
+}
+
+/* gap */
+.gap {
+  gap: 3rem;
+}
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.scroll-none::-webkit-scrollbar {
+  display: none;
+}
+.text-center {
+  text-align: center;
+}
+.boder-redius-5px {
+  border-radius: 5px;
+}
+.boder-redius-50 {
+  border-radius: 50%;
+}
+.box-shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background: #f5f5f5;
+}
+.dispaly-none {
+  display: none;
+}
+.line-height {
+  line-height: 2rem;
+}
+.text-captilize {
+  text-transform: capitalize;
+}

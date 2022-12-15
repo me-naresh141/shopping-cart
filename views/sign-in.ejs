@@ -1,0 +1,32 @@
+<%include persists/header%>
+    <section>
+        <div class="container height-100vh flex justify-center align-center flex-colum-mq">
+            <!-- 1 -->
+            <div class="width-40 width-100mq">
+                <img src="/images/men4.jpg" alt="img">
+            </div>
+            <!-- 2 -->
+            <div class="width-40 width-100mq">
+                <form action="/users/signin" method="post">
+                    <h1 class="text-center font-size-2 font-weight600">Sign in</h1>
+                    <p class="color-red font-size-1-5">
+                        <%=error%>
+                    </p>
+                    <label for="">email </label>
+                    <input type="email" name="email" id="" placeholder="email">
+                    <label for="">password </label>
+                    <div class="boder-black boder-redius-5px">
+                        <input type="password" name="password" id="password-input" placeholder="password">
+                        <span class="material-symbols-outlined visivilty">
+                            visibility_off
+                        </span>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+
+    <%include persists/footer%>

@@ -1,0 +1,101 @@
+<% include persists/header%>
+
+    <!-- all user -->
+    <section>
+        <div class="container height-25rem margit-b-1 pading-1 box-shadow margit-b-p5 margin-top5rem-mq ">
+            <h1 class="text-center margin-b-2 font-size-2 ">All Users</h1>
+            <div class=" flex width-100  height-20rem gap overflow-scroll scroll-none width-100mq flex-colum-mq ">
+                <!-- user -->
+                <%alluser.forEach((user)=>{%>
+                    <div class="min-width-20 height-90 box-shadow width-100mq ">
+                        <figure class="height-50  bg-color-white">
+                            <img class="userimage" src="/images/<%=user.image%>" alt="img">
+                        </figure>
+                        <h2 class="text-center font-size-1-5">
+                            <%=user.name%>
+                        </h2>
+                        <p class="font-size-1-2 text-center">
+                            Email: <%=user.email%>
+                        </p>
+                        <p class="font-size-1-2 text-center">Admin:<%=user.admin%>
+                        </p>
+                        <p class="color-pink font-size-1-2 text-center text-captilize margit-b-1">
+                            <%=user.info%>
+                        </p>
+                        <div class=" height-13  flex justify-around">
+                            <a class="flex align-self" href="/admin/<%=user.id%>/unblock"><button
+                                    class="btn btn-sucess ">unblock</button></a>
+                            <a class="flex align-self " href="/admin/<%=user.id%>/block"><button
+                                    class="btn btn-delete">block</button></a>
+                        </div>
+                    </div>
+                    <%})%>
+            </div>
+        </div>
+    </section>
+    <!-- product -->
+    <section>
+        <div class="container  pading-1 flex flex-direction-column justify-between  ">
+            <h1 class="text-center margin-b-2 font-size-2 ">My Product</h1>
+            <div class="flex flex-wrap-yes gap flex-colum-mq">
+                <!-- admin product -->
+                <%product.forEach((item)=>{%>
+                    <div class="admin-card width-100mq">
+                        <div class="card-img">
+                            <a class="like-icon" href="#"><i class="fa-regular fa-heart"></i></a>
+                            <img src="/images/<%=item.image%>" alt="">
+                        </div>
+                        <div class="card-info">
+                            <p class="text-title text-captilize">
+                                <%=item.name%>
+                            </p>
+                            <p class="text-body">
+                                <%=item.description.slice(0,25)%>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="text-title">$<%=item.price%></span>
+                            <div class="card-button">
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <span>Quantity:<%=item.quantity%></span>
+                        </div>
+                        <div class="flex justify-between ">
+                            <a href="/admin/<%=item._id%>/edit"><button class="btn btn-sucess">Edit</button></a>
+                            <a href="/admin/<%=item._id%>/delete"><button class="btn btn-delete">Delete</button></a>
+                        </div>
+
+                    </div>
+                    <%})%>
+            </div>
+        </div>
+    </section>
+    <!-- form -->
+    <section class="margit-b-1 ">
+        <div class="container pading-1 flex flex-direction-column justify-center">
+            <!-- form div -->
+            <div class="width-40 margin-auto box-shadow  width-100mq">
+                <form action="/users/product" enctype="multipart/form-data" method="post">
+                    <h1 class="text-center font-size-2 font-weight600">Add new product</h1>
+                    <label for="">Name </label>
+                    <input type="text" name="name" id="" value="<%=product.name%>" placeholder=" product name">
+                    <label for="">Description </label>
+                    <input type="text" name="description" id="" placeholder=" description">
+                    <label for="">Price</label>
+                    <input type="number" name="price" id="" placeholder="Price">
+                    <label for="">quantity</label>
+                    <input type="number" name="quantity" id="" placeholder="quantity">
+                    <label for="">category</label>
+                    <input type="text" name="category" id="" placeholder="category">
+                    <label for="">Image </label>
+                    <!-- <div class="boder-black boder-redius-5px"> -->
+                    <input class="boder-black" type="file" name="image" id="" placeholder="image">
+                    <!-- </div> -->
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <% include persists/footer%>

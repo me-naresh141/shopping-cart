@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>shopping-carts</title>
+    <!-- font awesome kit -->
+    <script src="https://kit.fontawesome.com/d08fba0fb1.js" crossorigin="anonymous"></script>
+
+    <!-- material -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+</head>
+
+<body>
+    <header class="bg-color-green">
+        <div class="container flex justify-between pading-tb-1">
+            <a class="font-size-1-5 color-white" href="/">Shopping-cart</a>
+            <input type="checkbox" id="click" />
+            <label class="menu-btn" for="click"><i class="fa-solid fa-bars"></i></label>
+            <%if(user){%>
+                <!-- user -->
+                <nav class="flex">
+                    <ul class="flex font-size-1-5">
+                        <figure class="profile-figure">
+                            <img title="<%=user.name%>" class="boder-redius-50 profile-image"
+                                src="/images/<%=user.image%>" alt="">
+                        </figure>
+                        <li class="marginlr-p5"><a class=" color-white" href="/users/admin">Admin</a></li>
+                        <li class="marginlr-p5"><a class=" color-white" href="/users/logout">Logout</a></li>
+
+
+                    </ul>
+                    <span class="cart-number color-pink">
+                        <%=cart.length%>
+                    </span>
+                    <a class="color-white cart-icon font-size-2" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                </nav>
+                <%}else{%>
+                    <!-- no user -->
+                    <nav>
+                        <ul class="flex font-size-1-5">
+                            <li class=""><a class=" color-white" href="/users/signin">Sign in</a></li>
+                            <li class="marginlr-p5"><a class=" color-white" href="/users/signup">Sign up</a></li>
+                        </ul>
+                    </nav>
+                    <%}%>
+        </div>
+
+    </header>
